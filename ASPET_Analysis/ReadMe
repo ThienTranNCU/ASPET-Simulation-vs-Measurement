@@ -1,0 +1,64 @@
+
+#1########### Analyzing simulation output #########################################################
+The simulaiton output is suggeted to be elocated in a seprated folder
+The program, Read_SIM_ASPET_Coin_DAQ_v3.cc, is written to analyze the out put .root file from simulation
+This program will give: 2D back to back reconstruction, 1D projection, time vs detections, and total eneryg spectrum.
+All the analysis results in .root files will be located in a new folder (similar name as the input .root file) in the same directory as the input file.
+
+To compile the program:
+
+#open terminal
+
+>g++ Read_SIM_ASPET_Coin_DAQ_v3.cc -o Read_SIM_ASPET_Coin_DAQ_v3 `root-config --cflags --glibs` -lSpectrum
+
+There are 6 arguments: 1. file path (required), 2. file name (required), 3. start time [sec](optional), 4. stop time [sec](optional), 5. Energy threshold [keV](optional),
+ 6. Efficiency correction text file (optional)(if the 6th aggument is available, the new created folder of the result will be named inputFileName_DAQ)
+
+The execution file is created. To use the execution file for the analysis: 
+
+>./Read_SIM_ASPET_Coin_DAQ_v3 [file path (required)] [file name (required)] [start time [sec] (optional-default 20)] [stop time [sec] (optional-default 140)]
+ [energy threshold [keV](optional- default 400 keV)] [Efficiency correction [.txt] (optional)]
+
+Example:
+>./Read_SIM_ASPET_Coin_DAQ_v3 230228_Data_Simulation_ASPET_CGMH220312/Phantom5cm/PMMA DETECTOR_DATA_100MeV_2mins_230309_4.0MeVsig 20 140 400 ASPET_Efficiency_BG_v4.txt 
+
+All output histogram from .root file can be read and reanalyzed by Root macro program.
+
+#2########### Analyzing measurement output############################################################
+The measurement output is analysis by BinaryRead_Measurement-LAB230303.cpp
+This program will give: 2D back to back reconstruction (h2Map), 1D projection, time vs detections, and total eneryg spectrum.
+All the analysis results in .root files will be located in a new folder (similar name as the input .root file) in the same directory as the input file
+
+To compile the program:
+
+#open terminal
+
+>g++ BinaryRead_Measurement-LAB230303.cpp -o BinaryRead_Measurement-LAB230303 `root-config --cflags --glibs` -lSpectrum
+
+There are 7 arguments: 1. file path (required), 2. file name (required), 3. Calibration file .txt (required), 4.  Energy threshold [keV](optional),
+ 5. Minimum ADC value for display (optional), 6. Maximum ADC value for display (optional), 7. Approximated measurement time [sec](optional) 
+
+The execution file is created. To use the execution file for the analysis: 
+
+>./BinaryRead_Measurement-LAB230303 [file path (required)] [file name (required)] [Calibration file .txt (required)] [Energy threshold [keV] (optional-default 400)]
+ [Minimum ADC value for display (optional- default 0)] [Maximum ADC value for display (optional-default 32800)] [Approximated measurement time [sec] (optional-default 1200)]
+
+Example:
+
+>./BinaryRead_Measurement-LAB230303 Data_CGMH_220312 100104.298_A3-2MINS Energy_Calibration_v2_ASPET_CGMH220312.txt 400 200 800 160
+>./BinaryRead_Measurement-LAB230303 Data_CGMH_220312 101740.889_C1BG Energy_Calibration_v2_ASPET_CGMH220312.txt 400 200 800 160
+
+
+All output histogram from .root file can be read and reanalyzed by Root macro program.
+
+#3##################Example reading processed data from the analysis program
+
+Compare_Simulation_Measurement_230307_NormRange.cc
+
+This program root macro read the processed file from the analysis program of simulation and measurement. The 1D projection of simulation (scaled) and measurement are put on comparison.
+ 
+ To run this program:
+ 
+#open terminal
+
+> root .x  Compare_Simulation_Measurement_230307_NormRange.cc
