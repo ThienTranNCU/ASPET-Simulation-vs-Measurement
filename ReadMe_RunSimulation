@@ -1,0 +1,20 @@
+The simulation of ASPET CGMH 220312 is divided into 2 parts. Part_1 must be generated first and it's result will be used in Part_2.
+
+#Part_1 : Generate phasepace of positron emitters from interaction of Proton PSB on Phantom
+
+PSB: 70 MeV, 90 MeV, 100 MeV (beam sigmas were set as the corresponding values from CGMH). 10E7 protons generated.
+
+Phatom: Cylinder (Height: 210 mm, Dia: 5cm/20cm). Medium: PMMA / PE / Zebra (1cm of PMMA and PE alternatively arranged). 
+ 
+#Part_2 :  Using the phasepace of positron emitters to generate positrion under the detection of ASPET.
+
+ASPET: 2 rsectors -> 8 modules -> 64 channels. Spacing 6cm (5cm dia phantom), 21 cm (20cm dia phantom).
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// Run Simulation
+
+To run the simulation.
+
+1. Open terminal in the directory.
+
+2. Run all simulation files in the directory: 
+>root .x RunAll.cc
