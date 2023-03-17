@@ -1,0 +1,146 @@
+#/vis/disable
+#/vis/open                                          OGLSX 1200 1200
+/vis/viewer/set/viewpointThetaPhi                  60 60
+/vis/viewer/zoom                                   1.0
+/vis/drawVolume
+#/tracking/storeTrajectory           	           1
+#/vis/scene/add/trajectories
+#/vis/scene/endOfEventAction                       accumulate
+#/vis/scene/endOfEventAction accumulate 10
+########
+/gate/geometry/setMaterialDatabase                     GateMaterials.db #  GateMaterials.db
+/gate/world/setMaterial                                Vacuum
+/gate/world/geometry/setXLength                        100 cm
+/gate/world/geometry/setYLength                        100 cm
+/gate/world/geometry/setZLength                        100 cm
+#######
+
+
+########
+/gate/world/daughters/name                             phantomBase
+/gate/world/daughters/insert                           box
+/gate/phantomBase/geometry/setXLength                  200  mm
+/gate/phantomBase/geometry/setYLength                  200  mm
+/gate/phantomBase/geometry/setZLength                  210  mm
+/gate/phantomBase/placement/setTranslation             0.0 0.0 115.0 mm
+/gate/phantomBase/setMaterial                          Air
+#/gate/phantomBase/vis/forceSolid
+/gate/phantomBase/vis/setColor                          green
+/gate/phantomBase/vis/setVisible                        1
+
+/gate/phantomBase/daughters/name                        Phantom
+/gate/phantomBase/daughters/insert                      cylinder
+/gate/Phantom/geometry/setRmax                          100 mm
+/gate/Phantom/geometry/setHeight                        210 mm
+/gate/Phantom/setMaterial                               PMMA
+#/gate/Phantom/vis/forceWireframe  
+#/gate/Phantom/vis/setColor                             white
+/gate/Phantom/vis/setVisible                            1
+/gate/Phantom/vis/setColor red
+/gate/Phantom/vis/forceSolid
+
+
+
+########
+
+
+/gate/actor/addActor ProductionAndStoppingActor          ActorC11
+/gate/actor/ActorC11/attachTo                            phantomBase
+/gate/actor/ActorC11/setResolution                       256 256 256
+/gate/actor/ActorC11/stepHitType                         random
+/gate/actor/ActorC11/addFilter                           particleFilter
+/gate/actor/ActorC11/particleFilter/addParticle          C11
+/gate/actor/ActorC11/save                                ./PMMA_90MeV/PAG_Map_Energy_90_MeV_C11.hdr
+########
+/gate/actor/addActor ProductionAndStoppingActor          ActorO15
+/gate/actor/ActorO15/attachTo                            phantomBase
+/gate/actor/ActorO15/setResolution                       256 256 256
+/gate/actor/ActorO15/stepHitType                         random
+/gate/actor/ActorO15/addFilter                           particleFilter
+/gate/actor/ActorO15/particleFilter/addParticle          O15
+/gate/actor/ActorO15/save                                ./PMMA_90MeV/PAG_Map_Energy_90_MeV_O15.hdr
+#########
+
+#//Positron-Emitters
+/gate/actor/addActor ProductionAndStoppingActor          ActorC11_1D
+/gate/actor/ActorC11_1D/attachTo                         phantomBase
+/gate/actor/ActorC11_1D/setResolution                    1 1  420
+/gate/actor/ActorC11_1D/stepHitType                      random
+/gate/actor/ActorC11_1D/addFilter                        particleFilter
+/gate/actor/ActorC11_1D/particleFilter/addParticle       C11
+/gate/actor/ActorC11_1D/save                             ./PMMA_90MeV/PAG_Map_Energy_90_MeV_C11.root
+#########
+/gate/actor/addActor ProductionAndStoppingActor          ActorO15_1D
+/gate/actor/ActorO15_1D/attachTo                         phantomBase
+/gate/actor/ActorO15_1D/setResolution                    1 1 420
+/gate/actor/ActorO15_1D/stepHitType                      random
+/gate/actor/ActorO15_1D/addFilter                        particleFilter
+/gate/actor/ActorO15_1D/particleFilter/addParticle       O15
+/gate/actor/ActorO15_1D/save                             ./PMMA_90MeV/PAG_Map_Energy_90_MeV_O15.root
+
+#//Positron-Emitters
+/gate/actor/addActor ProductionAndStoppingActor          ActorC11_1D_TXT
+/gate/actor/ActorC11_1D_TXT/attachTo                         phantomBase
+/gate/actor/ActorC11_1D_TXT/setResolution                    1 1  420
+/gate/actor/ActorC11_1D_TXT/stepHitType                      random
+/gate/actor/ActorC11_1D_TXT/addFilter                        particleFilter
+/gate/actor/ActorC11_1D_TXT/particleFilter/addParticle       C11
+/gate/actor/ActorC11_1D_TXT/save                             ./PMMA_90MeV/PAG_Map_Energy_90_MeV_C11.txt
+#########
+/gate/actor/addActor ProductionAndStoppingActor          ActorO15_1D_TXT
+/gate/actor/ActorO15_1D_TXT/attachTo                         phantomBase
+/gate/actor/ActorO15_1D_TXT/setResolution                    1 1 420
+/gate/actor/ActorO15_1D_TXT/stepHitType                      random
+/gate/actor/ActorO15_1D_TXT/addFilter                        particleFilter
+/gate/actor/ActorO15_1D_TXT/particleFilter/addParticle       O15
+/gate/actor/ActorO15_1D_TXT/save                             ./PMMA_90MeV/PAG_Map_Energy_90_MeV_O15.txt
+
+
+##########
+/gate/actor/addActor                                     DoseActor  doseDistribution2D
+/gate/actor/doseDistribution2D/save                     ./PMMA_90MeV/Dose_Map_Energy_90_MeV_2D.root
+/gate/actor/doseDistribution2D/attachTo                  phantomBase
+/gate/actor/doseDistribution2D/stepHitType               random
+/gate/actor/doseDistribution2D/setResolution             420 1 420
+/gate/actor/doseDistribution2D/enableDose                true
+#########
+/gate/actor/addActor                                     DoseActor  doseDistribution1D
+/gate/actor/doseDistribution1D/save                      ./PMMA_90MeV/Dose_Map_Energy_90_MeV_1D.root
+/gate/actor/doseDistribution1D/attachTo                  phantomBase
+/gate/actor/doseDistribution1D/stepHitType               random
+/gate/actor/doseDistribution1D/setResolution             1 1 420
+/gate/actor/doseDistribution1D/enableDose                true
+
+/gate/actor/addActor                                     DoseActor  doseDistribution1D_txt
+/gate/actor/doseDistribution1D_txt/save                      ./PMMA_90MeV/Dose_Map_Energy_90_MeV_1D.txt
+/gate/actor/doseDistribution1D_txt/attachTo                  phantomBase
+/gate/actor/doseDistribution1D_txt/stepHitType               random
+/gate/actor/doseDistribution1D_txt/setResolution             1 1 420
+/gate/actor/doseDistribution1D_txt/enableDose                true
+
+
+#########
+/gate/physics/addPhysicsList QGSP_BIC_HP_EMZ
+########
+/gate/run/initialize
+########
+/gate/random/setEngineName MersenneTwister
+/gate/random/setEngineSeed auto
+########
+/gate/source/addSource 			                PBS      PencilBeam
+/gate/source/PBS/setParticleType 	                proton
+/gate/source/PBS/setEnergy                              90 MeV
+/gate/source/PBS/setSigmaEnergy 	                0.59 MeV
+/gate/source/PBS/setPosition 		                0 0 -22 cm
+/gate/source/PBS/setSigmaX 		                    15.09 mm
+/gate/source/PBS/setSigmaY 		                    14.53  mm
+/gate/source/PBS/setSigmaTheta 		                20 mrad
+/gate/source/PBS/setSigmaPhi   		                20 mrad
+/gate/source/PBS/setEllipseXThetaEmittance 	        40 mm*mrad #40 mm*mrad
+/gate/source/PBS/setEllipseYPhiEmittance   	        40 mm*mrad #40 mm*mrad
+#positive-> converging beam; negative diverging         beam
+/gate/source/PBS/setEllipseXThetaRotationNorm 	        positive
+/gate/source/PBS/setEllipseYPhiRotationNorm   	        positive
+#########
+/gate/application/setTotalNumberOfPrimaries 	        10000000 #
+/gate/application/start
