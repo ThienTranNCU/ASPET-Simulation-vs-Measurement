@@ -1,0 +1,23 @@
+/gate/world/daughters/name                    phantomBase
+/gate/world/daughters/insert                  box
+/gate/phantomBase/geometry/setXLength             50  mm
+/gate/phantomBase/geometry/setYLength             50  mm
+/gate/phantomBase/geometry/setZLength             210 mm
+/gate/phantomBase/placement/setTranslation 0.0 0.0 115.0 mm #55.0 4.5,3.5
+/gate/phantomBase/setMaterial                     Air
+#/gate/phantomBase/vis/forceSolid
+/gate/phantomBase/vis/setColor                    green
+/gate/phantomBase/vis/setVisible                  1
+
+
+/gate/phantomBase/daughters/name                           Phantom
+/gate/phantomBase/daughters/insert                         cylinder
+/gate/Phantom/geometry/setRmax                       25  mm
+/gate/Phantom/geometry/setHeight                     210 mm
+/gate/Phantom/placement/setTranslation               0 0 0 mm 
+/gate/Phantom/setMaterial                            Polyethylene
+#/gate/Phantom/vis/forceWireframe  
+#/gate/Phantom/vis/setColor                          white
+/gate/Phantom/vis/setVisible                         1
+/gate/Phantom/vis/setColor red
+/gate/Phantom/vis/forceSolid

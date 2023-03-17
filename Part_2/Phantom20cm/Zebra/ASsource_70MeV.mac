@@ -1,0 +1,35 @@
+/gate/source/addSource car  voxel
+/gate/source/car/reader/insert  image
+/gate/source/car/imageReader/translator/insert  linear
+/gate/source/car/imageReader/linearTranslator/setScale  0.566 Bq
+/gate/source/car/imageReader/readFile  ../../../Part_1/Phantom20cm/Zebra_70MeV/PAG_Map_Energy_70_MeV_C11-Prod.hdr     
+/gate/source/car/setPosition -100 -100 10 mm # -100 -100 105 mm 
+/gate/source/car/gps/particle e+
+/gate/source/car/setForcedUnstableFlag true 
+/gate/source/car/gps/ene/mono 1.0 MeV
+/gate/source/car/gps/angtype iso
+/gate/source/car/gps/mintheta    0. deg
+/gate/source/car/gps/maxtheta  180. deg
+/gate/source/car/gps/minphi      0. deg
+/gate/source/car/gps/maxphi    360. deg
+/gate/source/car/setForcedHalfLife 1221.2 s 
+/gate/source/car/dump 1
+
+
+/gate/source/addSource car1  voxel
+/gate/source/car1/reader/insert  image
+/gate/source/car1/imageReader/translator/insert  linear
+/gate/source/car1/imageReader/linearTranslator/setScale 5.653 Bq 
+/gate/source/car1/imageReader/readFile ../../../Part_1/Phantom20cm/Zebra_70MeV/PAG_Map_Energy_70_MeV_O15-Prod.hdr
+/gate/source/car1/setPosition -100 -100 10 mm # -100 -100 105 mm 
+/gate/source/car1/gps/particle e+
+/gate/source/car1/gps/ene/mono  1.0 MeV
+/gate/source/car1/setForcedUnstableFlag true
+/gate/source/car1/gps/angtype iso
+/gate/source/car1/gps/mintheta    0. deg
+/gate/source/car1/gps/maxtheta  180. deg
+/gate/source/car1/gps/minphi      0. deg
+/gate/source/car1/gps/maxphi    360. deg
+/gate/source/car1/setForcedHalfLife 122.2 s
+/gate/source/car1/dump 1
+

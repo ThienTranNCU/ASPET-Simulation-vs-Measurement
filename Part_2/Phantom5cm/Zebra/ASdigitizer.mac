@@ -1,0 +1,19 @@
+#	D I G I T I Z E R 
+/gate/digitizer/Singles/insert adder
+/gate/digitizer/Singles/insert readout
+/gate/digitizer/Singles/readout/setDepth 4
+#       ENERGY BLURRING
+/gate/digitizer/Singles/insert blurring
+/gate/digitizer/Singles/blurring/setResolution 0.081
+/gate/digitizer/Singles/blurring/setEnergyOfReference 511. keV
+#       ENERGY WINDOW
+/gate/digitizer/Singles/insert thresholder
+/gate/digitizer/Singles/thresholder/setThreshold 50. keV
+/gate/digitizer/Singles/insert upholder
+/gate/digitizer/Singles/upholder/setUphold 800. keV
+#/gate/digitizer/Singles/insert timeResolution
+#/gate/digitizer/Singles/timeResolution/setTimeResolution .1 ns
+#	C O I N C I    S O R T E R 
+/gate/digitizer/Coincidences/setWindow 20. ns # 10,20
+/gate/digitizer/Coincidences/minSectorDifference 1
+/gate/digitizer/Coincidences/MultiplesPolicy  takeWinnerOfGoods

@@ -1,0 +1,272 @@
+
+/gate/world/daughters/name                    	      phantomBase
+/gate/world/daughters/insert                          box
+/gate/phantomBase/geometry/setXLength                 50  mm
+/gate/phantomBase/geometry/setYLength                 50  mm
+/gate/phantomBase/geometry/setZLength                 210 mm
+/gate/phantomBase/placement/setTranslation            0.0 0.0 115.0 mm 
+/gate/phantomBase/setMaterial                         Air
+#/gate/phantomBase/vis/forceSolid
+/gate/phantomBase/vis/setColor                        green
+/gate/phantomBase/vis/setVisible                      1
+
+
+
+/gate/phantomBase/daughters/name                      PMMA1
+/gate/phantomBase/daughters/insert                    cylinder
+/gate/PMMA1/geometry/setRmax                        25 mm
+/gate/PMMA1/geometry/setHeight                      10 mm
+/gate/PMMA1/placement/setTranslation             0.0 0.0 -100 mm
+/gate/PMMA1/setMaterial                             PMMA
+#/gate/PMMA1/vis/forceWireframe  
+#/gate/PMMA1/vis/setColor                           white
+/gate/PMMA1/vis/setVisible                          1
+/gate/PMMA1/vis/setColor red
+/gate/PMMA1/vis/forceSolid
+
+/gate/phantomBase/daughters/name                      PE1
+/gate/phantomBase/daughters/insert                    cylinder
+/gate/PE1/geometry/setRmax                        25 mm
+/gate/PE1/geometry/setHeight                      10 mm
+/gate/PE1/placement/setTranslation             0.0 0.0 -90 mm
+/gate/PE1/setMaterial                             Polyethylene
+#/gate/PE1/vis/forceWireframe  
+#/gate/PE1/vis/setColor                           white
+/gate/PE1/vis/setVisible                          1
+/gate/PE1/vis/setColor blue
+/gate/PE1/vis/forceSolid
+
+
+
+/gate/phantomBase/daughters/name                      PMMA2
+/gate/phantomBase/daughters/insert                    cylinder
+/gate/PMMA2/geometry/setRmax                        25 mm
+/gate/PMMA2/geometry/setHeight                      10 mm
+/gate/PMMA2/placement/setTranslation             0.0 0.0 -80 mm
+/gate/PMMA2/setMaterial                             PMMA
+#/gate/PMMA2/vis/forceWireframe  
+#/gate/PMMA2/vis/setColor                           white
+/gate/PMMA2/vis/setVisible                          1
+/gate/PMMA2/vis/setColor red
+/gate/PMMA2/vis/forceSolid
+
+
+/gate/phantomBase/daughters/name                      PE2
+/gate/phantomBase/daughters/insert                    cylinder
+/gate/PE2/geometry/setRmax                        25 mm
+/gate/PE2/geometry/setHeight                      10 mm
+/gate/PE2/placement/setTranslation             0.0 0.0 -70 mm
+/gate/PE2/setMaterial                             Polyethylene
+#/gate/PE2/vis/forceWireframe  
+#/gate/PE2/vis/setColor                           white
+/gate/PE2/vis/setVisible                          1
+/gate/PE2/vis/setColor blue
+/gate/PE2/vis/forceSolid
+
+/gate/phantomBase/daughters/name                      PMMA3
+/gate/phantomBase/daughters/insert                    cylinder
+/gate/PMMA3/geometry/setRmax                        25 mm
+/gate/PMMA3/geometry/setHeight                      10 mm
+/gate/PMMA3/placement/setTranslation             0.0 0.0 -60 mm
+/gate/PMMA3/setMaterial                             PMMA
+#/gate/PMMA3/vis/forceWireframe  
+#/gate/PMMA3/vis/setColor                           white
+/gate/PMMA3/vis/setVisible                          1
+/gate/PMMA3/vis/setColor red
+/gate/PMMA3/vis/forceSolid
+#
+
+/gate/phantomBase/daughters/name                      PE3
+/gate/phantomBase/daughters/insert                    cylinder
+/gate/PE3/geometry/setRmax                        25 mm
+/gate/PE3/geometry/setHeight                      10 mm
+/gate/PE3/placement/setTranslation             0.0 0.0 -50 mm
+/gate/PE3/setMaterial                             Polyethylene
+#/gate/PE3/vis/forceWireframe  
+#/gate/PE3/vis/setColor                           white
+/gate/PE3/vis/setVisible                          1
+/gate/PE3/vis/setColor blue
+/gate/PE3/vis/forceSolid
+
+/gate/phantomBase/daughters/name                      PMMA4
+/gate/phantomBase/daughters/insert                    cylinder
+/gate/PMMA4/geometry/setRmax                        25 mm
+/gate/PMMA4/geometry/setHeight                      10 mm
+/gate/PMMA4/placement/setTranslation             0.0 0.0 -40 mm
+/gate/PMMA4/setMaterial                             PMMA
+#/gate/PMMA4/vis/forceWireframe  
+#/gate/PMMA4/vis/setColor                           white
+/gate/PMMA4/vis/setVisible                          1
+/gate/PMMA4/vis/setColor red
+/gate/PMMA4/vis/forceSolid
+
+
+/gate/phantomBase/daughters/name                      PE4
+/gate/phantomBase/daughters/insert                    cylinder
+/gate/PE4/geometry/setRmax                        25 mm
+/gate/PE4/geometry/setHeight                      10 mm
+/gate/PE4/placement/setTranslation             0.0 0.0 -30 mm
+/gate/PE4/setMaterial                             Polyethylene
+#/gate/PE4/vis/forceWireframe  
+#/gate/PE4/vis/setColor                           white
+/gate/PE4/vis/setVisible                          1
+/gate/PE4/vis/setColor blue
+/gate/PE4/vis/forceSolid
+
+/gate/phantomBase/daughters/name                      PMMA5
+/gate/phantomBase/daughters/insert                    cylinder
+/gate/PMMA5/geometry/setRmax                        25 mm
+/gate/PMMA5/geometry/setHeight                      10 mm
+/gate/PMMA5/placement/setTranslation             0.0 0.0 -20 mm
+/gate/PMMA5/setMaterial                             PMMA
+#/gate/PMMA5/vis/forceWireframe  
+#/gate/PMMA5/vis/setColor                           white
+/gate/PMMA5/vis/setVisible                          1
+/gate/PMMA5/vis/setColor red
+/gate/PMMA5/vis/forceSolid
+
+/gate/phantomBase/daughters/name                      PE5
+/gate/phantomBase/daughters/insert                    cylinder
+/gate/PE5/geometry/setRmax                        25 mm
+/gate/PE5/geometry/setHeight                      10 mm
+/gate/PE5/placement/setTranslation             0.0 0.0 -10 mm
+/gate/PE5/setMaterial                             Polyethylene
+#/gate/PE5/vis/forceWireframe  
+#/gate/PE5/vis/setColor                           white
+/gate/PE5/vis/setVisible                          1
+/gate/PE5/vis/setColor blue
+/gate/PE5/vis/forceSolid
+
+/gate/phantomBase/daughters/name                      PMMA6
+/gate/phantomBase/daughters/insert                    cylinder
+/gate/PMMA6/geometry/setRmax                        25 mm
+/gate/PMMA6/geometry/setHeight                      10 mm
+/gate/PMMA6/placement/setTranslation             0.0 0.0 0.0 mm
+/gate/PMMA6/setMaterial                             PMMA
+#/gate/PMMA6/vis/forceWireframe  
+#/gate/PMMA6/vis/setColor                           white
+/gate/PMMA6/vis/setVisible                          1
+/gate/PMMA6/vis/setColor red
+/gate/PMMA6/vis/forceSolid
+
+
+/gate/phantomBase/daughters/name                      PE6
+/gate/phantomBase/daughters/insert                    cylinder
+/gate/PE6/geometry/setRmax                        25 mm
+/gate/PE6/geometry/setHeight                      10 mm
+/gate/PE6/placement/setTranslation             0.0 0.0 10 mm
+/gate/PE6/setMaterial                             Polyethylene
+#/gate/PE6/vis/forceWireframe  
+#/gate/PE6/vis/setColor                           white
+/gate/PE6/vis/setVisible                          1
+/gate/PE6/vis/setColor blue
+/gate/PE6/vis/forceSolid
+
+/gate/phantomBase/daughters/name                      PMMA7
+/gate/phantomBase/daughters/insert                    cylinder
+/gate/PMMA7/geometry/setRmax                        25 mm
+/gate/PMMA7/geometry/setHeight                      10 mm
+/gate/PMMA7/placement/setTranslation             0.0 0.0 20 mm
+/gate/PMMA7/setMaterial                             PMMA
+#/gate/PMMA7/vis/forceWireframe  
+#/gate/PMMA7/vis/setColor                           white
+/gate/PMMA7/vis/setVisible                          1
+/gate/PMMA7/vis/setColor red
+/gate/PMMA7/vis/forceSolid
+
+/gate/phantomBase/daughters/name                      PE7
+/gate/phantomBase/daughters/insert                    cylinder
+/gate/PE7/geometry/setRmax                        25 mm
+/gate/PE7/geometry/setHeight                      10 mm
+/gate/PE7/placement/setTranslation             0.0 0.0 30 mm
+/gate/PE7/setMaterial                             Polyethylene
+#/gate/PE7/vis/forceWireframe  
+#/gate/PE7/vis/setColor                           white
+/gate/PE7/vis/setVisible                          1
+/gate/PE7/vis/setColor blue
+/gate/PE7/vis/forceSolid
+
+/gate/phantomBase/daughters/name                      PMMA8
+/gate/phantomBase/daughters/insert                    cylinder
+/gate/PMMA8/geometry/setRmax                        25 mm
+/gate/PMMA8/geometry/setHeight                      10 mm
+/gate/PMMA8/placement/setTranslation             0.0 0.0 40 mm
+/gate/PMMA8/setMaterial                             PMMA
+#/gate/PMMA8/vis/forceWireframe  
+#/gate/PMMA8/vis/setColor                           white
+/gate/PMMA8/vis/setVisible                          1
+/gate/PMMA8/vis/setColor red
+/gate/PMMA8/vis/forceSolid
+
+/gate/phantomBase/daughters/name                      PE8
+/gate/phantomBase/daughters/insert                    cylinder
+/gate/PE8/geometry/setRmax                        25 mm
+/gate/PE8/geometry/setHeight                      10 mm
+/gate/PE8/placement/setTranslation             0.0 0.0 50 mm
+/gate/PE8/setMaterial                             Polyethylene
+#/gate/PE8/vis/forceWireframe  
+#/gate/PE8/vis/setColor                           white
+/gate/PE8/vis/setVisible                          1
+/gate/PE8/vis/setColor blue
+/gate/PE8/vis/forceSolid
+
+/gate/phantomBase/daughters/name                      PMMA9
+/gate/phantomBase/daughters/insert                    cylinder
+/gate/PMMA9/geometry/setRmax                        25 mm
+/gate/PMMA9/geometry/setHeight                      10 mm
+/gate/PMMA9/placement/setTranslation             0.0 0.0 60 mm
+/gate/PMMA9/setMaterial                             PMMA
+#/gate/PMMA9/vis/forceWireframe  
+#/gate/PMMA9/vis/setColor                           white
+/gate/PMMA9/vis/setVisible                          1
+/gate/PMMA9/vis/setColor red
+/gate/PMMA9/vis/forceSolid
+
+/gate/phantomBase/daughters/name                      PE9
+/gate/phantomBase/daughters/insert                    cylinder
+/gate/PE9/geometry/setRmax                        25 mm
+/gate/PE9/geometry/setHeight                      10 mm
+/gate/PE9/placement/setTranslation             0.0 0.0 70 mm
+/gate/PE9/setMaterial                             Polyethylene
+#/gate/PE9/vis/forceWireframe  
+#/gate/PE9/vis/setColor                           white
+/gate/PE9/vis/setVisible                          1
+/gate/PE9/vis/setColor blue
+/gate/PE9/vis/forceSolid
+
+/gate/phantomBase/daughters/name                      PMMA10
+/gate/phantomBase/daughters/insert                    cylinder
+/gate/PMMA10/geometry/setRmax                        25 mm
+/gate/PMMA10/geometry/setHeight                      10 mm
+/gate/PMMA10/placement/setTranslation             0.0 0.0 80 mm
+/gate/PMMA10/setMaterial                             PMMA
+#/gate/PMMA10/vis/forceWireframe  
+#/gate/PMMA10/vis/setColor                           white
+/gate/PMMA10/vis/setVisible                          1
+/gate/PMMA10/vis/setColor red
+/gate/PMMA10/vis/forceSolid
+
+/gate/phantomBase/daughters/name                      PE10
+/gate/phantomBase/daughters/insert                    cylinder
+/gate/PE10/geometry/setRmax                        25 mm
+/gate/PE10/geometry/setHeight                      10 mm
+/gate/PE10/placement/setTranslation             0.0 0.0 90 mm
+/gate/PE10/setMaterial                             Polyethylene
+#/gate/PE10/vis/forceWireframe  
+#/gate/PE10/vis/setColor                           white
+/gate/PE10/vis/setVisible                          1
+/gate/PE10/vis/setColor blue
+/gate/PE10/vis/forceSolid
+
+
+/gate/phantomBase/daughters/name                      PMMA11
+/gate/phantomBase/daughters/insert                    cylinder
+/gate/PMMA11/geometry/setRmax                        25 mm
+/gate/PMMA11/geometry/setHeight                      10 mm
+/gate/PMMA11/placement/setTranslation             0.0 0.0 100 mm
+/gate/PMMA11/setMaterial                             PMMA
+#/gate/PMMA11/vis/forceWireframe  
+#/gate/PMMA11/vis/setColor                           white
+/gate/PMMA11/vis/setVisible                          1
+/gate/PMMA11/vis/setColor red
+/gate/PMMA11/vis/forceSolid

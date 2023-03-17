@@ -1,0 +1,116 @@
+###############################################
+#######        C A M E R A         ############
+###############################################
+
+#        BOX for system matri
+
+
+/gate/world/daughters/name cylindricalPET
+/gate/world/daughters/insert box
+/gate/cylindricalPET/placement/setTranslation 0.0 0.0 0.0 mm
+/gate/cylindricalPET/geometry/setXLength 800 mm
+/gate/cylindricalPET/geometry/setYLength 600 mm
+/gate/cylindricalPET/geometry/setZLength 990 mm
+/gate/cylindricalPET/vis/forceWireframe
+/gate/cylindricalPET/vis/setColor gray
+/gate/cylindricalPET/vis/setVisible 1
+/gate/cylindricalPET/setMaterial Air
+/gate/cylindricalPET/vis/forceWireframe
+
+
+#HEAD  for system matrix
+/gate/cylindricalPET/daughters/name head
+/gate/cylindricalPET/daughters/insert box
+/gate/head/placement/setTranslation 115 0.0 52.5 mm  
+/gate/head/geometry/setXLength 20 mm
+/gate/head/geometry/setYLength 52 mm
+/gate/head/geometry/setZLength 104 mm
+/gate/head/setMaterial Air
+
+
+
+#MODULE   for system matrix
+/gate/head/daughters/name module
+/gate/head/daughters/insert box
+/gate/module/placement/setTranslation 0.0 0.0 0.0 mm
+/gate/module/geometry/setXLength 20.0 mm
+/gate/module/geometry/setYLength 26 mm
+/gate/module/geometry/setZLength 26 mm
+/gate/module/setMaterial Air
+/gate/module/vis/setVisible 1
+/gate/module/vis/forceWireframe
+/gate/module/vis/setColor green
+
+#	SUBMODULE   for system matrix
+/gate/module/daughters/name submodule
+/gate/module/daughters/insert box
+/gate/submodule/placement/setTranslation 0.0 0.0 0.0 mm
+/gate/submodule/geometry/setXLength 20 mm
+/gate/submodule/geometry/setYLength 25.8 mm
+/gate/submodule/geometry/setZLength 25.8 mm
+/gate/submodule/setMaterial Air
+/gate/submodule/vis/setVisible 1
+/gate/submodule/vis/forceWireframe
+/gate/submodule/vis/setColor yellow
+
+#	C R Y S T A L   for system matrix
+/gate/submodule/daughters/name crystal
+/gate/submodule/daughters/insert box
+/gate/crystal/placement/setTranslation 0.0 0.0 0.0 mm
+/gate/crystal/geometry/setXLength 20.0 mm
+/gate/crystal/geometry/setYLength 3.2 mm
+/gate/crystal/geometry/setZLength 3.2 mm
+/gate/crystal/setMaterial BaSO4
+/gate/crystal/vis/setVisible 1
+#/gate/crystal/vis/forceSolid
+/gate/crystal/vis/setColor red
+
+#	LYSO layer
+/gate/crystal/daughters/name LYSO
+/gate/crystal/daughters/insert box
+/gate/LYSO/placement/setTranslation 0.0 0.0 0.0 mm
+/gate/LYSO/geometry/setXLength 20.0 mm
+/gate/LYSO/geometry/setYLength 3.0 mm
+/gate/LYSO/geometry/setZLength 3.0 mm
+/gate/LYSO/setMaterial LYSO
+/gate/LYSO/vis/setColor blue
+/gate/LYSO/vis/setVisible 1
+#	LYGO layer  
+/gate/crystal/repeaters/insert cubicArray
+/gate/crystal/cubicArray/setRepeatNumberX 1
+/gate/crystal/cubicArray/setRepeatNumberY 8
+/gate/crystal/cubicArray/setRepeatNumberZ 8
+/gate/crystal/cubicArray/setRepeatVector 0 3.2 3.2 mm
+#	R E P E A T    SUBMODULE
+/gate/submodule/repeaters/insert cubicArray
+/gate/submodule/cubicArray/setRepeatNumberX 1
+/gate/submodule/cubicArray/setRepeatNumberY 1
+/gate/submodule/cubicArray/setRepeatNumberZ 1
+/gate/submodule/cubicArray/setRepeatVector 0.0 0.0 0.0 mm
+#	R E P E A T MODULE
+/gate/module/repeaters/insert cubicArray
+/gate/module/cubicArray/setRepeatNumberX 1
+/gate/module/cubicArray/setRepeatNumberY 2
+/gate/module/cubicArray/setRepeatNumberZ 4
+/gate/module/cubicArray/setRepeatVector 0.0 26 26 mm
+#	R E P E A T HEAD
+/gate/head/repeaters/insert ring
+/gate/head/ring/setRepeatNumber 2
+/gate/head/ring/setPoint1 0.  1.  52.5 mm
+/gate/head/ring/setPoint2 0. -1. 52.5 mm 
+
+#	A T T A C H    S Y S T E M 
+/gate/systems/cylindricalPET/rsector/attach head
+/gate/systems/cylindricalPET/module/attach module
+/gate/systems/cylindricalPET/submodule/attach submodule
+/gate/systems/cylindricalPET/crystal/attach crystal
+/gate/systems/cylindricalPET/layer0/attach LYSO
+
+#	A T T A C H    C R Y S T A L  SD
+
+/gate/LYSO/attachCrystalSD
+
+
+/gate/systems/cylindricalPET/describe
+
+
